@@ -1,0 +1,120 @@
+###########################################################
+# APPLICATION SETTINGS                                    #
+###########################################################
+ app_base_auth_login:
+ app_base_auth_pass:
+ app_protocol: https
+ app_host: demoapp.strongqa.com
+
+ app_test_user: admin@strongqa.com
+ app_test_pass: 1234567890
+ app_test_user_name: Admin User
+
+ app_api_token: 97f85fa997125c758a67213c44e1c0543a603f3819b31456b9
+ app_api_end_point: "api/v1"
+ app_api_protocol: https
+
+###########################################################
+# TEST ENVIRONMENTS SETTINGS                              #
+###########################################################
+ user_agent: # if blank, then default agent
+ page_load_idle_timeout: 20
+ maximized_window: true # Specify maximized browser window size
+
+ # Specify one of the following drivers: selenium, selenium_grid, webkit, poltergeist, phantomjs, sauce,
+ # testingbot, browserstack, crossbrowsertesting, headless_chrome
+ driver: headless_chrome
+
+ # -Selenium-
+ # specify one of next browsers: iexplore (ie), firefox (ff), chrome, safari
+ selenium_browser: chrome
+
+ # -Headless Chrome-
+ # List of available flags (http://peter.sh/experiments/chromium-command-line-switches/)
+ headless_chrome_flags: "window-size=1920x1080, disable-gpu"
+
+ # -Selenium Grid-
+ selenium_hub_url: "http://example.com:4444/wd/hub"
+
+ # -PhantomJS/Poltergeist-
+ # specify settings for poltergeist
+ phantom_ignore_js_errors: false
+ phantom_ignore_ssl_errors: true
+
+ # -Appium-
+ appium_url:
+ appium_platform_name: "iOS"
+ appium_platform_version: "10.0"
+ appium_browser_name: "Safari"
+ appium_device_name: "iPad Air 2 Simulator"
+ appium_device_orientation: "portrait"
+
+ rspec_wait_timeout: 10
+
+###########################################################
+# Cloud-based Cross-browser Services                      #
+###########################################################
+ cloud_auth_login: some_user_or_client_key
+ cloud_auth_pass: api_key_or_api_secret_or_access_key
+ cloud_platform: any
+ cloud_browser_name: Chrome
+ cloud_browser_version: '59'
+ cloud_max_duration: '1800'
+ cloud_http_idle_timeout: 40
+
+ # -SauceLabs- (https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options)
+ cloud_sauce_record_screenshots: false
+ cloud_sauce_idle_timeout: '180'
+ cloud_sauce_video_upload_on_pass: false
+
+ # -TestingBot- (https://testingbot.com/support/other/test-options)
+ cloud_testingbot_idle_timeout: '180'
+ cloud_testingbot_screenshots: false
+
+ # -BrowserStack (https://www.browserstack.com/automate/capabilities)
+ cloud_bstack_resolution: '1920x1080'
+ cloud_bstack_project: 'Howitzer Example'
+ cloud_bstack_build: 'v1'
+ cloud_bstack_os: Windows
+
+ # -CrossBrowserTesting (https://app.crossbrowsertesting.com/selenium/run)
+ cloud_cbt_name: 'Howitzer Example'
+ cloud_cbt_build: '1.0'
+ cloud_cbt_os_api_name: 'Win7x64-C1'
+ cloud_cbt_screen_resolution: '1920x1080'
+ cloud_cbt_record_video: 'true'
+ cloud_cbt_record_network: 'true'
+
+###########################################################
+# CAPYBARA SETTINGS                                       #
+###########################################################
+ capybara_wait_time: 20
+
+###########################################################
+# LOGGER SETTINGS                                         #
+###########################################################
+ log_dir: "log"
+ debug_mode: false
+ html_log: log.html
+ selenium_server_log: selenium-server.log
+ required_clean_logs: false
+ hide_datetime_from_log: false
+
+###########################################################
+# MAIL SETTINGS                                           #
+###########################################################
+ mail_adapter: mailgun
+ mail_wait_time: 60
+ mail_sleep_time: 3
+
+# -Mailgun- (http://www.mailgun.com/)
+ mailgun_key: mailgun_api_key
+ mailgun_domain: test_domain
+
+ # -Mailtrap- (https://mailtrap.io/)
+ mailtrap_api_token: private_api_key
+ mailtrap_inbox_id: inbox_id
+
+# -Gmail-
+ gmail_login: gmail_address
+ gmail_password: gmail_password
