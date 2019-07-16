@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 
-Bundler.require(:default)
+Bundler.require(:default, :webkit)
 
 Dir[
   './emails/**/*.rb',
