@@ -12,4 +12,4 @@ Dir[
   './prerequisites/factory_bot.rb'
 ].each { |f| require f }
 
-String.send(:include, Howitzer::Utils::StringExtensions)
+String.include Howitzer::Utils::StringExtensions
