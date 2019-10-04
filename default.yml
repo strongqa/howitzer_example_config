@@ -116,6 +116,7 @@
 # -Mailgun- (http://www.mailgun.com/)
  mailgun_key: mailgun_api_key
  mailgun_domain: test_domain
+ mailgun_ssl: true
 
  # -Mailtrap- (https://mailtrap.io/)
  mailtrap_api_token: private_api_key
