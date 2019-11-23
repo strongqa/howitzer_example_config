@@ -24,6 +24,7 @@ end
 
 Spyke::Base.connection = Faraday.new(url: "#{Howitzer.app_uri.site}/#{Howitzer.app_api_end_point}") do |c|
   c.request   :json
+  c.response  :json
   c.use       TestTokenAuthentication
   c.use       JSONParser
   c.adapter   Faraday.default_adapter
