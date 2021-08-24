@@ -3,7 +3,7 @@ require 'bundler/setup'
 
 Bundler.require(:default)
 
-Dir[ # rubocop:disable Lint/NonDeterministicRequireOrder
+Dir[
   './emails/**/*.rb',
   './web/sections/**/*.rb',
   './web/pages/**/*.rb',
