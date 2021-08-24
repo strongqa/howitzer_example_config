@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'bundler/setup'
 
-Bundler.require(:default, :webkit)
+Bundler.require(:default)
 
-Dir[
+Dir[ # rubocop:disable Lint/NonDeterministicRequireOrder
   './emails/**/*.rb',
   './web/sections/**/*.rb',
   './web/pages/**/*.rb',
