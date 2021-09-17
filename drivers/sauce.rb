@@ -5,9 +5,7 @@ Capybara.register_driver :sauce do |app|
     maxDuration: Howitzer.cloud_max_duration,
     idleTimeout: Howitzer.cloud_sauce_idle_timeout,
     recordScreenshots: Howitzer.cloud_sauce_record_screenshots,
-    videoUploadOnPass: Howitzer.cloud_sauce_video_upload_on_pass,
-    username: Howitzer.cloud_auth_login,
-    access_key: Howitzer.cloud_auth_pass
+    videoUploadOnPass: Howitzer.cloud_sauce_video_upload_on_pass
   )
   if Howitzer.user_agent.present?
     if CapybaraHelpers.chrome_browser?
@@ -18,7 +16,7 @@ Capybara.register_driver :sauce do |app|
       caps[:firefox_profile] = profile
     end
   end
-  url = 'https://ondemand.us-west-1.saucelabs.com/wd/hub'
+  url = "https://#{Howitzer.cloud_auth_login}:#{Howitzer.cloud_auth_pass}@ondemand.saucelabs.com/wd/hub"
   CapybaraHelpers.cloud_driver(app, caps, url)
 end
 
