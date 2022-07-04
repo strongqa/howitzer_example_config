@@ -80,6 +80,12 @@
  cloud_cbt_record_video: 'true'
  cloud_cbt_record_network: 'true'
 
+  # -LambdaTest (https://www.lambdatest.com/support/docs/selenium-automation-capabilities)
+ cloud_lambdatest_resolution: '1024x768'
+ cloud_lambdatest_project: 'Howitzer Example'
+ cloud_lambdatest_build: 'v1'
+ cloud_lambdatest_mobile_device:
+
 ###########################################################
 # CAPYBARA SETTINGS                                       #
 ###########################################################
