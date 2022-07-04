@@ -1,11 +1,11 @@
-class JSONParser < Faraday::Response::Middleware
-  def parse(body)
-    json = MultiJson.load(body, symbolize_keys: true)
-    return { data: json } if !json.is_a?(Hash) || json[:errors].blank?
+class JSONParser < Faraday::Middleware
+  def on_complete(env)
+    json = MultiJson.load(env.body, symbolize_keys: true)
+    return env.body = { data: json } if !json.is_a?(Hash) || json[:errors].blank?
 
-    { data: json, errors: parse_errors_in_rails5_style(json) }
+    env.body = { data: json, errors: parse_errors_in_rails5_style(json) }
   rescue MultiJson::ParseError => e
-    { errors: { base: [error: e.message] } }
+    env.body = { errors: { base: [error: e.message] } }
   end
 
   private
