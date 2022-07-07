@@ -81,6 +81,8 @@
  cloud_cbt_record_network: 'true'
 
   # -LambdaTest (https://www.lambdatest.com/support/docs/selenium-automation-capabilities)
+ cloud_lambdatest_user:
+ cloud_lambdatest_accessKey:
  cloud_lambdatest_resolution: '1024x768'
  cloud_lambdatest_project: 'Howitzer Example'
  cloud_lambdatest_build: 'v1'
