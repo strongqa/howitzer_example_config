@@ -1,6 +1,6 @@
 Capybara.register_driver :browserstack do |app|
   url = "https://#{Howitzer.cloud_auth_login}:#{Howitzer.cloud_auth_pass}@hub.browserstack.com/wd/hub"
-  if Gem::Requirement.new('>=4').satisfied_by?(Gem::Version.new(Selenium::WebDriver::VERSION))
+  if CapybaraHelpers.w3c_selenium?
     caps = CapybaraHelpers.required_w3c_cloud_caps
     bstack_options = {
       sessionName: "#{(Howitzer.current_rake_task || 'ALL').upcase} #{Howitzer.cloud_browser_name}",

@@ -2,7 +2,7 @@
 
 Capybara.register_driver :testingbot do |app|
   url = "https://#{Howitzer.cloud_auth_login}:#{Howitzer.cloud_auth_pass}@hub.testingbot.com/wd/hub"
-  if Gem::Requirement.new('>=4').satisfied_by?(Gem::Version.new(Selenium::WebDriver::VERSION))
+  if CapybaraHelpers.w3c_selenium?
     caps = CapybaraHelpers.required_w3c_cloud_caps
     caps[:platformName] = Howitzer.cloud_platform unless Howitzer.cloud_platform.casecmp?('any')
     tb_options = {
