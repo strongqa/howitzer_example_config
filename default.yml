@@ -101,7 +101,7 @@
 ###########################################################
 # MAIL SETTINGS                                           #
 ###########################################################
- mail_adapter: gmail
+ mail_adapter: testmail
  mail_wait_time: 60
  mail_sleep_time: 3
 
