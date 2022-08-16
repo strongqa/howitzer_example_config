@@ -101,7 +101,7 @@
 ###########################################################
 # MAIL SETTINGS                                           #
 ###########################################################
- mail_adapter: testmail
+ mail_adapter: onesecmail
  mail_wait_time: 60
  mail_sleep_time: 3
 
@@ -121,3 +121,6 @@
 # -testmail.app-
  testmail_api_key: testmail_api_key
  testmail_namespace: testmail_namespace
+
+# 1secMail
+ onesecmail_domain: 1secmail.com
