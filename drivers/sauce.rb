@@ -1,6 +1,6 @@
 # :sauce driver
 
-def w3c_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
+def w3c_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   caps = CapybaraHelpers.required_w3c_cloud_caps
   caps['platform'] = Howitzer.cloud_platform unless Howitzer.cloud_platform.casecmp?('any')
   sauce_options = {
@@ -23,7 +23,7 @@ def w3c_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
   caps
 end
 
-def classic_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
+def classic_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   caps = CapybaraHelpers.required_cloud_caps.merge(
     maxDuration: Howitzer.cloud_max_duration,
     idleTimeout: Howitzer.cloud_sauce_idle_timeout,

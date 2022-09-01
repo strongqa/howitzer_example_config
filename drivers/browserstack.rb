@@ -1,4 +1,4 @@
-def w3c_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
+def w3c_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   caps = CapybaraHelpers.required_w3c_cloud_caps
   bstack_options = {
     sessionName: "#{(Howitzer.current_rake_task || 'ALL').upcase} #{Howitzer.cloud_browser_name}",
@@ -20,7 +20,7 @@ def w3c_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
   caps
 end
 
-def classic_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
+def classic_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   caps = CapybaraHelpers.required_cloud_caps.merge(
     project: Howitzer.cloud_bstack_project,
     build: Howitzer.cloud_bstack_build
