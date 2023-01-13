@@ -1,6 +1,7 @@
 # :testingbot driver
 
-def w3c_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
+# rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+def w3c_selenium_browserstack_caps
   caps = CapybaraHelpers.required_w3c_cloud_caps
   caps[:platformName] = Howitzer.cloud_platform unless Howitzer.cloud_platform.casecmp?('any')
   tb_options = {
@@ -39,6 +40,7 @@ def classic_selenium_browserstack_caps
   end
   caps
 end
+# rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
 Capybara.register_driver :testingbot do |app|
   url = "https://#{Howitzer.cloud_auth_login}:#{Howitzer.cloud_auth_pass}@hub.testingbot.com/wd/hub"

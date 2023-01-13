@@ -1,4 +1,5 @@
-def w3c_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
+# rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+def w3c_selenium_browserstack_caps
   caps = CapybaraHelpers.required_w3c_cloud_caps
   bstack_options = {
     sessionName: "#{(Howitzer.current_rake_task || 'ALL').upcase} #{Howitzer.cloud_browser_name}",
@@ -20,7 +21,7 @@ def w3c_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
   caps
 end
 
-def classic_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
+def classic_selenium_browserstack_caps
   caps = CapybaraHelpers.required_cloud_caps.merge(
     project: Howitzer.cloud_bstack_project,
     build: Howitzer.cloud_bstack_build
@@ -38,6 +39,7 @@ def classic_selenium_browserstack_caps # rubocop:disable Metrics/AbcSize
   end
   caps
 end
+# rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
 Capybara.register_driver :browserstack do |app|
   url = "https://#{Howitzer.cloud_auth_login}:#{Howitzer.cloud_auth_pass}@hub.browserstack.com/wd/hub"
